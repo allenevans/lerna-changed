@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "description": "Github action for determining the changed packages in a lerna monorepo",
-  "main": "lib/main.js",
+  "main": "dist/lerna-changed.js",
   "scripts": {
-    "build": "tsc && npm run tidy",
-    "clean": "rimraf lib/",
+    "build": "webpack --config ./webpack.config.js",
+    "clean": "rimraf dist/",
     "lint": "tslint -c tslint.json --project tsconfig.json",
     "prebuild": "npm run clean",
     "start": "bin/lerna-changed",
-    "test": "jest --config=jest.config.js --silent",
-    "tidy": "rimraf ./lib/**/*.spec.*"
+    "test": "jest --config=jest.config.js --silent"
   },
   "repository": {
     "type": "git",
@@ -24,21 +23,22 @@
   ],
   "author": "Allen Evans",
   "license": "MIT",
-  "dependencies": {
-    "@actions/core": "1.1.0",
-    "lerna": "3.16.4"
-  },
   "devDependencies": {
+    "@actions/core": "1.1.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.5",
     "jest": "24.9.0",
+    "lerna": "3.16.4",
     "prettier": "1.18.2",
     "rimraf": "3.0.0",
     "ts-jest": "24.1.0",
+    "ts-loader": "6.1.0",
     "ts-node": "8.3.0",
     "tslint": "5.20.0",
     "tslint-config-airbnb": "5.11.1",
-    "typescript": "3.6.3"
+    "typescript": "3.6.3",
+    "webpack": "4.40.2",
+    "webpack-cli": "3.3.8"
   },
   "peerDependencies": {
     "@lerna/collect-updates": "3.16.0",

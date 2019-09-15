@@ -31,7 +31,7 @@ jobs:
 
     - name: "Commit build artifacts to branch"
       run: |
-        git add -f lib/ node_modules
+        git add -f dist/
         git config --global user.email "git-ci@techinity.com"
         git config --global user.name "Git CI"
         git commit -m '${{github.ref}} build artifacts'

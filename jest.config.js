@@ -6,7 +6,7 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
   },
   testPathIgnorePatterns: [
-    'lib/',
+    'dist/',
     'node_modules/',
   ],
   testMatch: [
