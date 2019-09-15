@@ -1,10 +1,13 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'lerna-changed'
+description: 'Github action for determining the changed packages in a lerna monorepo'
+author: 'Allen Evans'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  cwd:
+    description: 'Current working directory'
+    default: ''
+  envVar:
+    description: 'Set the environment variable with the changed packages output'
+    default: ''
 runs:
   using: 'node12'
   main: 'lib/main.js'

@@ -1,33 +1,48 @@
 {
-  "name": "javascript-template-action",
-  "version": "0.0.0",
+  "name": "lerna-changed",
+  "version": "1.0.0",
   "private": true,
-  "description": "JavaScript template action",
+  "description": "Github action for determining the changed packages in a lerna monorepo",
   "main": "lib/main.js",
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "build": "tsc && npm run tidy",
+    "clean": "rimraf lib/",
+    "lint": "tslint -c tslint.json --project tsconfig.json",
+    "prebuild": "npm run clean",
+    "start": "bin/lerna-changed",
+    "test": "jest --config=jest.config.js --silent",
+    "tidy": "rimraf ./lib/**/*.spec.*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-template.git"
+    "url": "git+https://github.com/allenevans/lerna-changed.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "Allen Evans",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.0.0"
+    "@actions/core": "1.1.0",
+    "lerna": "3.16.4"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
-    "@types/node": "^12.0.4",
-    "jest": "^24.8.0",
-    "jest-circus": "^24.7.1",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.1"
+    "@types/jest": "24.0.18",
+    "@types/node": "12.7.5",
+    "jest": "24.9.0",
+    "prettier": "1.18.2",
+    "rimraf": "3.0.0",
+    "ts-jest": "24.1.0",
+    "ts-node": "8.3.0",
+    "tslint": "5.20.0",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.6.3"
+  },
+  "peerDependencies": {
+    "@lerna/collect-updates": "3.16.0",
+    "@lerna/package-graph": "3.16.0",
+    "@lerna/project": "3.16.0"
   }
 }
