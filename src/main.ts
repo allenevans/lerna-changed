@@ -4,7 +4,7 @@ import { changedPackages } from './changed-packages';
 (async function run() {
   try {
     const cwd = core.getInput('cwd') || process.cwd();
-    const envVar = core.getInput('envVar');
+    const envVar = core.getInput('variable');
     const changed = await changedPackages(cwd);
 
     process.stdout.write(changed);

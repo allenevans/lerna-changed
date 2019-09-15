@@ -1,0 +1,42 @@
+name: "Release build"
+on:
+  push:
+    branches:
+      - 'releases/*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: "Debugging"
+      run: |
+        export GIT_URL="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${{github.repository}}"
+        echo $GIT_URL
+        echo ${{github.ref}}
+        printenv
+
+    - name: "Install dependencies"
+      run: npm install
+
+    - name: "Build"
+      run: npm run build
+
+    - name: "Remove dev dependencies"
+      run: |
+        rm -rf node_modules
+        npm install --production
+
+    - name: "Commit build artifacts to branch"
+      run: |
+        git add -f lib/ node_modules
+        git config --global user.email "git-ci@techinity.com"
+        git config --global user.name "Git CI"
+        git commit -m '${{github.ref}} build artifacts'
+
+    - name: "Publish artifacts"
+      run: |
+        export GIT_URL="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${{github.repository}}"
+        git push ${GIT_URL} HEAD:${{github.ref}}

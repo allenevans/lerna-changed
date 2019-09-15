@@ -5,8 +5,8 @@ inputs:
   cwd:
     description: 'Current working directory'
     default: ''
-  envVar:
-    description: 'Set the environment variable with the changed packages output'
+  variable:
+    description: 'Set the environment variable to set with the changed package string'
     default: ''
 runs:
   using: 'node12'
