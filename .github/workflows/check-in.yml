@@ -1,4 +1,4 @@
-name: "PR Checks"
+name: "Check in"
 on: [pull_request, push]
 
 jobs:
@@ -7,19 +7,21 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: "npm ci"
-      run: npm ci
+    - name: "Install dependencies"
+      run: npm install
 
-    - name: "npm run build"
+    - name: "Build"
       run: npm run build
 
-    - name: "npm run test"
+    - name: "Test"
       run: npm run test
 
-    - name: "check for uncommitted changes"
+    - name: "Lint"
+      run: npm run lint
+
+    - name: "Check for uncommitted changes"
       # Ensure no changes, but ignore node_modules dir since dev/fresh ci deps installed.
       run: |
         git diff --exit-code --stat -- . ':!node_modules' \
-        || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
-                 "and check in all changes" \
+        || (echo "##[error] found changed files after build." \
             && exit 1)
