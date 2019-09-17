@@ -32,8 +32,8 @@ jobs:
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, 'release artifacts') == false
         run: |
-          git add -f dist/
-          git commit -m 'release artifacts'
+          git add --ignore-errors -f dist/
+          git diff-index --quiet HEAD -- || git commit -m 'release artifacts'
 
       - name: "Semantic version"
         if: |
