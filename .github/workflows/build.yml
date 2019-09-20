@@ -27,6 +27,6 @@ jobs:
 
       - name: "Check for uncommitted changes"
         run: |
-          git diff --exit-code --stat -- . ':!node_modules' \
+          git diff --exit-code --stat -- . ':!dist' ':!node_modules' \
           || (echo "##[error] found changed files after build." \
               && exit 1)
