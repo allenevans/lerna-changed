@@ -1,10 +1,6 @@
 name: "build"
 
-on:
-  push:
-    branches:
-      - '*'
-      - '!master'
+on: [pull_request]
 
 jobs:
   validation:
@@ -12,6 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+
+      - name: "Config"
+        run: |
+          git config --global user.email "git-ci@techinity.com"
+          git config --global user.name "gitci"
 
       - name: "Install dependencies"
         run: npm install
@@ -25,8 +26,19 @@ jobs:
       - name: "Lint"
         run: npm run lint
 
+      - name: "Commit build output"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_ACTION_TOKEN}}
+          GH_TOKEN: ${{secrets.GITHUB_ACTION_TOKEN}}
+        run: |
+          git checkout -B "dist/artifacts-${{github.event.number}}"
+          git reset ${{github.event.after}}
+          git add -f dist/
+          git commit -m "ci: build distributables"
+          git push https://${{secrets.GITHUB_ACTION_TOKEN}}@github.com/allenevans/lerna-changed.git HEAD:dist/artifacts-${{github.event.number}}
+
       - name: "Check for uncommitted changes"
         run: |
-          git diff --exit-code --stat -- . ':!dist' ':!node_modules' \
+          git diff --exit-code --stat -- . ':!node_modules' \
           || (echo "##[error] found changed files after build." \
               && exit 1)
