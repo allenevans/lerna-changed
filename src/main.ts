@@ -11,6 +11,8 @@ import { changedPackages } from './changed-packages';
     if (envVar) {
       core.exportVariable(envVar, changed);
     }
+
+    core.setOutput('scope', changed);
   } catch (error) {
     core.setFailed(error.message);
     process.exit(1);

@@ -8,6 +8,9 @@ inputs:
   variable:
     description: 'Set the environment variable to set with the changed package string'
     default: ''
+outputs:
+  scope:
+    description: 'Changed package scope'
 runs:
   using: 'node12'
   main: 'dist/lerna-changed.js'
