@@ -35,7 +35,7 @@ jobs:
           git reset ${{github.event.after}}
           git add -f dist/
           git commit -m "ci: build distributables"
-          git push https://${{secrets.GITHUB_ACTION_TOKEN}}@github.com/allenevans/lerna-changed.git HEAD:dist/artifacts-${{github.event.number}}
+          git push -f https://${{secrets.GITHUB_ACTION_TOKEN}}@github.com/allenevans/lerna-changed.git HEAD:dist/artifacts-${{github.event.number}}
 
       - name: "Check for uncommitted changes"
         run: |
