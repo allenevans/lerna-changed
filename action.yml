@@ -1,16 +1,14 @@
-name: 'lerna-changed'
+name: 'Lerna Changed'
 description: 'Github action for determining the changed packages in a lerna monorepo'
 author: 'Allen Evans'
 inputs:
   cwd:
     description: 'Current working directory'
     default: ''
-  variable:
-    description: 'Set the environment variable to set with the changed package string'
-    default: ''
+    required: false
 outputs:
   scope:
-    description: 'Changed package scope'
+    description: 'Value containing the changed package scope, or empty string if no changes present'
 runs:
   using: 'node12'
   main: 'dist/lerna-changed.js'
