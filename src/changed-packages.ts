@@ -23,5 +23,9 @@ export const changedPackages = async (cwd: string) => {
     (node) => node.pkg,
   );
 
+  if (updates.length === 1) {
+    return updates[0].name;
+  }
+
   return updates.length ? `{${updates.map((pkg) => pkg.name).join(',')}}` : '';
 };
