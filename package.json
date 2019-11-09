@@ -1,6 +1,6 @@
 {
   "name": "lerna-changed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Github action for determining the changed packages in a lerna monorepo",
   "main": "dist/lerna-changed.js",
