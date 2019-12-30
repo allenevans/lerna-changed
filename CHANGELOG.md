@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/allenevans/lerna-changed/compare/v1.0.1...v1.1.0) (2019-12-30)
+
+
+### Features
+
+* build dist after updated package dependencies ([c6269ed](https://github.com/allenevans/lerna-changed/commit/c6269ed64096318812ba66b60114c35345377991))
+
 ## [1.0.1](https://github.com/allenevans/lerna-changed/compare/v1.0.0...v1.0.1) (2019-11-09)
 
 
