@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/allenevans/lerna-changed/compare/v1.1.0...v1.1.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* missing step output ([db5ca65](https://github.com/allenevans/lerna-changed/commit/db5ca65416f0ed6c19677644fc7d148241d79a7b))
+
 # [1.1.0](https://github.com/allenevans/lerna-changed/compare/v1.0.1...v1.1.0) (2019-12-30)
 
 
