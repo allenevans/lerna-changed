@@ -25,20 +25,20 @@
   "author": "Allen Evans",
   "license": "MIT",
   "devDependencies": {
-    "@actions/core": "1.2.0",
+    "@actions/core": "1.1.0",
     "@semantic-release/changelog": "3.0.6",
     "@semantic-release/commit-analyzer": "6.3.3",
     "@semantic-release/git": "7.0.18",
     "@semantic-release/npm": "5.3.5",
     "@semantic-release/release-notes-generator": "7.3.5",
     "@types/jest": "24.0.25",
-    "@types/node": "13.1.1",
+    "@types/node": "13.1.5",
     "jest": "24.9.0",
-    "lerna": "3.20.1",
+    "lerna": "3.20.2",
     "prettier": "1.19.1",
     "rimraf": "3.0.0",
     "semantic-release": "15.14.0",
-    "ts-jest": "24.2.0",
+    "ts-jest": "24.3.0",
     "ts-loader": "6.2.1",
     "ts-node": "8.5.4",
     "tslint": "5.20.1",
@@ -48,8 +48,8 @@
     "webpack-cli": "3.3.10"
   },
   "peerDependencies": {
-    "@lerna/collect-updates": "3.16.0",
-    "@lerna/package-graph": "3.16.0",
-    "@lerna/project": "3.16.0"
+    "@lerna/collect-updates": "3.20.2",
+    "@lerna/package-graph": "3.20.2",
+    "@lerna/project": "3.20.2"
   }
 }
