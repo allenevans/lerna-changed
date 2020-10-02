@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/allenevans/lerna-changed/compare/v1.1.1...v1.1.2) (2020-10-02)
+
+
+### Bug Fixes
+
+* update dependencies ([18c57c4](https://github.com/allenevans/lerna-changed/commit/18c57c4a3e0f1f7430c36331ff3d0b7cadf633fa))
+
 ## [1.1.1](https://github.com/allenevans/lerna-changed/compare/v1.1.0...v1.1.1) (2020-01-09)
 
 
