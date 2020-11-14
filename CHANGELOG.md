@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/allenevans/lerna-changed/compare/v1.1.3...v1.1.4) (2020-11-14)
+
+
+### Bug Fixes
+
+* swap set output order with debug info ([f513973](https://github.com/allenevans/lerna-changed/commit/f5139731ae8486f053aab0aeca0225948ee8f3bc))
+
 ## [1.1.3](https://github.com/allenevans/lerna-changed/compare/v1.1.2...v1.1.3) (2020-11-09)
 
 
