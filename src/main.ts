@@ -6,9 +6,10 @@ import { changedPackages } from './changed-packages';
     const cwd = core.getInput('cwd') || process.cwd();
     const changed = await changedPackages(cwd);
 
+    core.setOutput('scope', changed);
+
     process.stdout.write(changed);
 
-    core.setOutput('scope', changed);
   } catch (error) {
     core.setFailed(error.message);
     process.exit(1);
