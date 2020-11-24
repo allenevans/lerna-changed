@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/allenevans/lerna-changed/compare/v1.1.4...v1.1.5) (2020-11-24)
+
+
+### Bug Fixes
+
+* Prevent arbitrary command injection by commit comment during release. GHSL-2020-229. ([a2e5c90](https://github.com/allenevans/lerna-changed/commit/a2e5c90286d938eda83682a18001e1f56d7035e8))
+
 ## [1.1.4](https://github.com/allenevans/lerna-changed/compare/v1.1.3...v1.1.4) (2020-11-14)
 
 
