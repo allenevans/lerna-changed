@@ -14,7 +14,7 @@ type Updated = {
  * Get the list of changed packages as a string
  * @param cwd Current working directory
  */
-export const changedPackages = async (cwd: string) => {
+export const changedPackages = async (cwd: string): Promise<string> => {
   const project = new Project(cwd);
   const packageGraph = new PackageGraph(await project.getPackages());
   const execOptions = { cwd };

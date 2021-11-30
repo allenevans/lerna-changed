@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   mode: 'production',
   entry: {
-    ['lerna-changed']: path.resolve('src/main'),
+    'lerna-changed': path.resolve('src/main'),
   },
   resolve: {
     extensions: ['.js', '.json', '.ts'],
