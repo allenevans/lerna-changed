@@ -9,7 +9,6 @@ import { changedPackages } from './changed-packages';
     core.setOutput('scope', changed);
 
     process.stdout.write(changed);
-
   } catch (error) {
     core.setFailed(error.message);
     process.exit(1);
