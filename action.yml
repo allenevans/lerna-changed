@@ -6,6 +6,10 @@ inputs:
     description: 'Current working directory'
     default: ''
     required: false
+  include:
+    description: 'Include existing packages into the list of changed packages'
+    default: ''
+    required: false
 outputs:
   scope:
     description: 'Value containing the changed package scope, or empty string if no changes present'

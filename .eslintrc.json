@@ -33,27 +33,6 @@
         "global-require": "off",
         "import/no-extraneous-dependencies": "off"
       }
-    },
-    {
-      "files": [
-        "**/config/*",
-        "**/harness.ts",
-        "**/postcss.config.js",
-        "**/src/harness/*",
-        "**/webpack.*"
-      ],
-      "rules": {
-        "global-require": "off",
-        "import/no-extraneous-dependencies": "off"
-      }
-    },
-    {
-      "files": [
-        "**/manifest-builder.js"
-      ],
-      "rules": {
-        "import/no-unresolved": "off"
-      }
     }
   ]
 }

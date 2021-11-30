@@ -4,7 +4,9 @@ import { changedPackages } from './changed-packages';
 (async function run() {
   try {
     const cwd = core.getInput('cwd') || process.cwd();
-    const changed = await changedPackages(cwd);
+    const include = core.getInput('include') || process.cwd();
+
+    const changed = await changedPackages({ cwd, include });
 
     core.setOutput('scope', changed);
 
