@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/allenevans/lerna-changed/compare/v1.2.0...v1.3.0) (2021-11-30)
+
+
+### Features
+
+* include parameter to accept merge existing packages into the list of updates ([212a40f](https://github.com/allenevans/lerna-changed/commit/212a40fcecb015b8ccf54af6763e3232f7cac2d9))
+* include parameter to accept merge existing packages into the list of updates ([2106473](https://github.com/allenevans/lerna-changed/commit/2106473201b1ff1de5a127a653854cb85b6d01a4))
+
 # [1.2.0](https://github.com/allenevans/lerna-changed/compare/v1.1.6...v1.2.0) (2021-11-30)
 
 
