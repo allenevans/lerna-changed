@@ -5,6 +5,7 @@ import { changedPackages } from './changed-packages';
   try {
     const cwd = core.getInput('cwd') || process.cwd();
     const include = core.getInput('include') || process.cwd();
+
     const changed = await changedPackages({ cwd, include });
 
     core.setOutput('scope', changed);

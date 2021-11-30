@@ -15,9 +15,10 @@ type ChangedPackagesArgs = {
   include?: string;
 };
 
+const unique = <T>(value: T, index: number, self: T[]) => self.indexOf(value) === index;
+
 /**
  * Get the list of changed packages as a string
- * @param cwd Current working directory
  */
 export const changedPackages = async ({ cwd, include }: ChangedPackagesArgs): Promise<string> => {
   const project = new Project(cwd);
@@ -29,9 +30,9 @@ export const changedPackages = async ({ cwd, include }: ChangedPackagesArgs): Pr
     .map((node) => node.pkg)
     ?.map(({ name }) => name);
 
-  const includedPackages = (include ?? '').replace(/^{|}$/g, '').split(',');
+  const includedPackages = (include ?? '').replace(/^["']?{|}["']?$/g, '').split(',');
 
-  const changed = [...includedPackages, ...updates];
+  const changed = [...includedPackages, ...updates].filter(unique);
 
   if (changed.length === 1) {
     return changed[0];
