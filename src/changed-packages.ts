@@ -10,22 +10,32 @@ type Updated = {
   pkg: LernaPackage;
 };
 
+type ChangedPackagesArgs = {
+  cwd: string;
+  include?: string;
+};
+
 /**
  * Get the list of changed packages as a string
  * @param cwd Current working directory
  */
-export const changedPackages = async (cwd: string): Promise<string> => {
+export const changedPackages = async ({ cwd, include }: ChangedPackagesArgs): Promise<string> => {
   const project = new Project(cwd);
   const packageGraph = new PackageGraph(await project.getPackages());
   const execOptions = { cwd };
   const options = {};
-  const updates: LernaPackage[] = (<Updated[]>collectUpdates(packageGraph.rawPackageList, packageGraph, execOptions, options)).map(
-    (node) => node.pkg,
-  );
 
-  if (updates.length === 1) {
-    return updates[0].name;
+  const updates: string[] = (<Updated[]>collectUpdates(packageGraph.rawPackageList, packageGraph, execOptions, options))
+    .map((node) => node.pkg)
+    ?.map(({ name }) => name);
+
+  const includedPackages = (include ?? '').replace(/^{|}$/g, '').split(',');
+
+  const changed = [...includedPackages, ...updates];
+
+  if (changed.length === 1) {
+    return changed[0];
   }
 
-  return updates.length ? `{${updates.map((pkg) => pkg.name).join(',')}}` : '';
+  return changed.length ? `{${changed.join(',')}}` : '';
 };
