@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/allenevans/lerna-changed/compare/v1.3.0...v1.4.0) (2021-12-29)
+
+
+### Features
+
+* update dependencies ([ead620f](https://github.com/allenevans/lerna-changed/commit/ead620f58f32b7b456ec2fb0c1d7009a8953a832))
+* update dependencies ([2a728b5](https://github.com/allenevans/lerna-changed/commit/2a728b5c159ad5b193ec0db00a6d25b8e721ffd7))
+* update dependencies ([4621e32](https://github.com/allenevans/lerna-changed/commit/4621e3200f2607bfdb710ab1c715598c3a6b4297))
+* update dependencies ([2cce15f](https://github.com/allenevans/lerna-changed/commit/2cce15fe4de331fb5cd6eceef9bcc414da2cc3a4))
+
 # [1.3.0](https://github.com/allenevans/lerna-changed/compare/v1.2.0...v1.3.0) (2021-11-30)
 
 
