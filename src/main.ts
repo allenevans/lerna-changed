@@ -11,8 +11,8 @@ import { changedPackages } from './changed-packages';
     core.setOutput('scope', changed);
 
     process.stdout.write(changed);
-  } catch (error) {
-    core.setFailed(error.message);
+  } catch (error: unknown) {
+    core.setFailed((error as Error).message);
     process.exit(1);
   }
 })();
