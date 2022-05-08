@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/allenevans/lerna-changed/compare/v1.4.0...v2.0.0) (2022-05-08)
+
+
+### Bug Fixes
+
+* prevent current working directory from being included in list of changed packages ([313f647](https://github.com/allenevans/lerna-changed/commit/313f647aacd943681dd6ed1ffea30f1018163c77))
+
+
+### chore
+
+* update dependencies including node runtime ([83826a9](https://github.com/allenevans/lerna-changed/commit/83826a9045cfe47adbb34002b05f30600fe4b11a))
+
+
+### BREAKING CHANGES
+
+* - includings major version dependency updates
+
 # [1.4.0](https://github.com/allenevans/lerna-changed/compare/v1.3.0...v1.4.0) (2021-12-29)
 
 
