@@ -23,7 +23,7 @@ jobs:
           echo "Release triggered by $ACTOR"
           echo "Commit $MESSAGE"
           git config --global user.email "git-ci@techinity.com"
-          git config --global user.name "gitci"
+          git config --global user.name "git-ci"
 
       - name: "Install dependencies"
         run: npm install

@@ -14,5 +14,5 @@ outputs:
   scope:
     description: 'Value containing the changed package scope, or empty string if no changes present'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/lerna-changed.js'
