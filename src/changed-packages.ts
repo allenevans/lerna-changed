@@ -1,6 +1,6 @@
-import collectUpdates from '@lerna/collect-updates';
-import PackageGraph from '@lerna/package-graph';
-import Project from '@lerna/project';
+import { collectUpdates } from '@lerna/collect-updates';
+import { PackageGraph } from '@lerna/package-graph';
+import { Project } from '@lerna/project';
 
 type LernaPackage = {
   name: string;

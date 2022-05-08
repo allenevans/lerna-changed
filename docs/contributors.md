@@ -3,7 +3,7 @@
 ### Checkin
 
 - Do checkin source (src)
-- Do checkin build output (lib)
+- Do checkin build output (dist)
 - Do checkin runtime node_modules
 - Do not checkin devDependency node_modules (husky can help see below)
 
