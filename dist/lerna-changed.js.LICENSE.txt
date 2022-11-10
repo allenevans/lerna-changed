@@ -1,9 +1,3 @@
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/
-
 /*!
  * fill-range <https://github.com/jonschlinkert/fill-range>
  *
